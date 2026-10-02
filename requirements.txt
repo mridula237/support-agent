@@ -1,0 +1,9 @@
+anthropic
+fastapi
+uvicorn
+mcp
+fastmcp
+sqlalchemy
+faker
+python-dotenv
+rich
