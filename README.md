@@ -72,19 +72,62 @@ Category accuracy 85% across billing/technical/shipping/account/other. Action ac
 ## HITL checkpoint
 Triggers when draft confidence < 0.7 or agent detects account anomalies. Presents operator with 3 options: approve escalation, send without escalation, or reject for manual review.
 
+## Stretch Goals
+
+### 1. Cost vs Quality (3 model tiers)
+
+| Tier | Model | CatAcc | ActAcc | Judge | Cost/ticket |
+|---|---|---|---|---|---|
+| haiku | claude-haiku-4-5 | 90% | 60% | 2.4/5 | $0.0033 |
+| sonnet | claude-sonnet-4-6 | 100% | 60% | 2.2/5 | $0.0098 |
+| opus | claude-opus-4-6 | 90% | 60% | 2.4/5 | $0.0488 |
+
+Sonnet wins on category accuracy at 3x Haiku's cost. Opus costs 5x more than Sonnet with no quality gain — Sonnet is the sweet spot for production.
+
+### 2. Multi-Agent Architecture
+
+Refactored monolithic agent into 3 specialized agents:
+- **Researcher** — classifies ticket, fetches customer context, orders, and policy via MCP tools
+- **Writer** — drafts the support response from the research context
+- **Verifier** — QA checks the draft and decides escalation
+
+Each agent has a single responsibility. The orchestrator runs them in sequence with handoffs. See `agent/multi_agent.py`.
+
+### 3. Slack Bot
+
+Mention `@SupportAgent` in any Slack channel with a ticket and customer ID:
+
+```
+@SupportAgent CUST0001 I was charged twice this month
+```
+
+Returns a formatted Slack message with ticket ID, category + confidence, action, customer name and plan, full draft response, and escalation reason.
+
+Run with:
+```bash
+export SLACK_BOT_TOKEN=...
+export SLACK_APP_TOKEN=...
+python slack_bot.py
+```
+
 ## Project structure
 ```
 agent/
-  agent.py         Main agent loop + observability
-  mcp_client.py    MCP client (implements CRM tool interface)
+  agent.py           Main agent loop + observability
+  mcp_client.py      MCP client (implements CRM tool interface)
+  multi_agent.py     Multi-agent: researcher / writer / verifier
 crm_server/
-  server.py        FastMCP server (5 CRM tools over stdio)
-  seed_db.py       Seeds SQLite with 50 customers, 100 orders, 8 policies
-  crm.db           SQLite database
+  server.py          FastMCP server (5 CRM tools over stdio)
+  seed_db.py         Seeds SQLite with 50 customers, 100 orders, 8 policies
+  crm.db             SQLite database
 eval/
-  eval.py          20-case eval harness + LLM-as-judge
-  eval_results.json Results
-config.py          Model, thresholds, costs
-run.py             Entry point (3-ticket interactive demo)
+  eval.py            20-case eval harness + LLM-as-judge
+  eval_results.json  Results
+  cost_quality_eval.py   3-tier cost vs quality comparison
+  cost_quality_results.json  Results
+config.py            Model, thresholds, costs
+run.py               Entry point (3-ticket interactive demo)
+slack_bot.py         Slack bot via Socket Mode
 Dockerfile
+requirements.txt
 ```
