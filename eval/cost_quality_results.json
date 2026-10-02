@@ -1,0 +1,311 @@
+[
+  {
+    "tier": "haiku",
+    "model": "claude-haiku-4-5-20251001",
+    "category_accuracy": 0.9,
+    "action_accuracy": 0.6,
+    "avg_judge_score": 2.4,
+    "avg_latency_s": 8.57,
+    "total_cost_10_tickets": 0.0325,
+    "cost_per_ticket": 0.0033,
+    "successful": 10,
+    "results": [
+      {
+        "id": 1,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.45,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 2,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 3,
+        "latency_s": 8.42,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 3,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 3,
+        "latency_s": 8.58,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 4,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 2,
+        "latency_s": 8.85,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 5,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.02,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 6,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 7.14,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 7,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.36,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 8,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 3,
+        "latency_s": 8.19,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 9,
+        "correct_category": false,
+        "correct_action": false,
+        "judge_score": 3,
+        "latency_s": 7.3,
+        "est_cost": 0.00325,
+        "success": true
+      },
+      {
+        "id": 10,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.42,
+        "est_cost": 0.00325,
+        "success": true
+      }
+    ]
+  },
+  {
+    "tier": "sonnet",
+    "model": "claude-sonnet-4-6",
+    "category_accuracy": 1.0,
+    "action_accuracy": 0.6,
+    "avg_judge_score": 2.2,
+    "avg_latency_s": 8.95,
+    "total_cost_10_tickets": 0.0975,
+    "cost_per_ticket": 0.0098,
+    "successful": 10,
+    "results": [
+      {
+        "id": 1,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.18,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 2,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 2,
+        "latency_s": 8.51,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 3,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 3,
+        "latency_s": 8.28,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 4,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 2,
+        "latency_s": 9.3,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 5,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.81,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 6,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 8.58,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 7,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.08,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 8,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 3,
+        "latency_s": 7.98,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 9,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 2,
+        "latency_s": 8.49,
+        "est_cost": 0.00975,
+        "success": true
+      },
+      {
+        "id": 10,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 10.25,
+        "est_cost": 0.00975,
+        "success": true
+      }
+    ]
+  },
+  {
+    "tier": "opus",
+    "model": "claude-opus-4-6",
+    "category_accuracy": 0.9,
+    "action_accuracy": 0.6,
+    "avg_judge_score": 2.4,
+    "avg_latency_s": 8.68,
+    "total_cost_10_tickets": 0.4875,
+    "cost_per_ticket": 0.0488,
+    "successful": 10,
+    "results": [
+      {
+        "id": 1,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 8.72,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 2,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 3,
+        "latency_s": 8.15,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 3,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 2,
+        "latency_s": 8.76,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 4,
+        "correct_category": true,
+        "correct_action": false,
+        "judge_score": 2,
+        "latency_s": 8.67,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 5,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.55,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 6,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 8.42,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 7,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 2,
+        "latency_s": 9.47,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 8,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 4,
+        "latency_s": 8.4,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 9,
+        "correct_category": false,
+        "correct_action": false,
+        "judge_score": 2,
+        "latency_s": 7.33,
+        "est_cost": 0.04875,
+        "success": true
+      },
+      {
+        "id": 10,
+        "correct_category": true,
+        "correct_action": true,
+        "judge_score": 3,
+        "latency_s": 9.28,
+        "est_cost": 0.04875,
+        "success": true
+      }
+    ]
+  }
+]
